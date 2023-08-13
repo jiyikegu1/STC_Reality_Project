@@ -1,9 +1,10 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        08/13/2023  10:30:54  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        08/13/2023  12:16:34  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-D:\KEIL\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\main.obj, .\Objects\74HC595D.obj TO .\Objects\STC12C5A60S2-35I
->> -LQFP48+LED+心形水晶摆台 PRINT (.\Listings\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台.m51) RAMSIZE (256)
+D:\KEIL\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\main.obj, .\Objects\74HC595D.obj, .\Objects\delay_ms.obj TO .\
+>> Objects\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台 PRINT (.\Listings\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台.m51) RAMS
+>> IZE (256)
 
 
 MEMORY MODEL: SMALL
@@ -13,6 +14,7 @@ INPUT MODULES INCLUDED:
   .\Objects\STARTUP.obj (?C_STARTUP)
   .\Objects\main.obj (MAIN)
   .\Objects\74HC595D.obj (74HC595D)
+  .\Objects\delay_ms.obj (DELAY_MS)
 
 
 LINK MAP OF MODULE:  .\Objects\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台 (?C_STARTUP)
@@ -27,9 +29,13 @@ LINK MAP OF MODULE:  .\Objects\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台 (?C_STAR
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0026H     UNIT         ?PR?_HC595SENDBYTE?74HC595D
-            CODE    0029H     000CH     UNIT         ?C_C51STARTUP
-            CODE    0035H     0007H     UNIT         ?PR?MAIN?MAIN
+            CODE    0003H     0060H     UNIT         ?PR?HC595SENDBYTE_FLICKER?74HC595D
+            CODE    0063H     0026H     UNIT         ?PR?_HC595SENDBYTE?74HC595D
+            CODE    0089H     001AH     UNIT         ?PR?_DELAY_MS?DELAY_MS
+            CODE    00A3H     000CH     UNIT         ?C_C51STARTUP
+            CODE    00AFH     0009H     UNIT         ?PR?DELAY1MS?DELAY_MS
+            CODE    00B8H     0008H     UNIT         ?PR?MAIN?MAIN
+            CODE    00C0H     0005H     UNIT         ?PR?HC595SENDBYTE_ALL_LOW?74HC595D
 
 
 
@@ -43,7 +49,21 @@ SEGMENT
   +--> ?PR?MAIN?MAIN
 
 ?PR?MAIN?MAIN
+  +--> ?PR?HC595SENDBYTE_ALL_LOW?74HC595D
+  +--> ?PR?HC595SENDBYTE_FLICKER?74HC595D
+
+?PR?HC595SENDBYTE_ALL_LOW?74HC595D
   +--> ?PR?_HC595SENDBYTE?74HC595D
+
+?PR?HC595SENDBYTE_FLICKER?74HC595D
+  +--> ?PR?_HC595SENDBYTE?74HC595D
+  +--> ?PR?_DELAY_MS?DELAY_MS
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/13/2023  12:16:34  PAGE 2
+
+
+?PR?_DELAY_MS?DELAY_MS
+  +--> ?PR?DELAY1MS?DELAY_MS
 
 
 
@@ -53,20 +73,17 @@ SYMBOL TABLE OF MODULE:  .\Objects\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台 (?C_
   ----------------------------------
 
   -------         MODULE        ?C_STARTUP
-  C:0029H         SEGMENT       ?C_C51STARTUP
+  C:00A3H         SEGMENT       ?C_C51STARTUP
   I:0008H         SEGMENT       ?STACK
   C:0000H         PUBLIC        ?C_STARTUP
   D:00E0H         SYMBOL        ACC
   D:00F0H         SYMBOL        B
   D:0083H         SYMBOL        DPH
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/13/2023  10:30:54  PAGE 2
-
-
   D:0082H         SYMBOL        DPL
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-  C:002CH         SYMBOL        IDATALOOP
+  C:00A6H         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -75,67 +92,133 @@ SYMBOL TABLE OF MODULE:  .\Objects\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台 (?C_
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:0029H         SYMBOL        STARTUP1
+  C:00A3H         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:0029H         LINE#         133
-  C:002BH         LINE#         134
-  C:002CH         LINE#         135
-  C:002DH         LINE#         136
-  C:002FH         LINE#         185
-  C:0032H         LINE#         196
+  C:00A3H         LINE#         133
+  C:00A5H         LINE#         134
+  C:00A6H         LINE#         135
+  C:00A7H         LINE#         136
+  C:00A9H         LINE#         185
+  C:00ACH         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        MAIN
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0080H         PUBLIC        P0
-  C:0035H         PUBLIC        main
+  C:00B8H         PUBLIC        main
   -------         PROC          MAIN
-  C:0035H         LINE#         10
-  C:0035H         LINE#         11
-  C:0035H         LINE#         14
-  C:003AH         LINE#         16
+  C:00B8H         LINE#         5
+  C:00B8H         LINE#         6
+  C:00B8H         LINE#         7
+  C:00BBH         LINE#         8
+  C:00BBH         LINE#         9
+  C:00BBH         LINE#         10
+  C:00BEH         LINE#         11
   -------         ENDPROC       MAIN
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/13/2023  12:16:34  PAGE 3
+
+
   -------         ENDMOD        MAIN
 
   -------         MODULE        74HC595D
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0080H         PUBLIC        P0
+  C:0003H         PUBLIC        Hc595SendByte_flicker
   B:0080H.1       PUBLIC        RCK
   B:0080H.2       PUBLIC        SCK
+  C:00C0H         PUBLIC        Hc595SendByte_all_LOW
   B:0080H.0       PUBLIC        SER
-  C:0003H         PUBLIC        _Hc595SendByte
+  C:0063H         PUBLIC        _Hc595SendByte
   -------         PROC          _HC595SENDBYTE
   D:0007H         SYMBOL        dat
   -------         DO            
   D:0006H         SYMBOL        a
   -------         ENDDO         
-  C:0003H         LINE#         11
-  C:0003H         LINE#         12
-  C:0003H         LINE#         14
-  C:0005H         LINE#         15
-  C:0007H         LINE#         16
-  C:0009H         LINE#         17
-BL51 BANKED LINKER/LOCATER V6.22                                                      08/13/2023  10:30:54  PAGE 3
-
-
-  C:0009H         LINE#         18
-  C:0014H         LINE#         19
-  C:0018H         LINE#         21
-  C:001AH         LINE#         22
-  C:001BH         LINE#         23
-  C:001CH         LINE#         24
-  C:001EH         LINE#         25
-  C:0022H         LINE#         26
-  C:0024H         LINE#         27
-  C:0025H         LINE#         28
-  C:0026H         LINE#         29
-  C:0028H         LINE#         30
+  C:0063H         LINE#         6
+  C:0063H         LINE#         7
+  C:0063H         LINE#         9
+  C:0065H         LINE#         10
+  C:0067H         LINE#         11
+  C:0069H         LINE#         12
+  C:0069H         LINE#         13
+  C:0074H         LINE#         14
+  C:0078H         LINE#         16
+  C:007AH         LINE#         17
+  C:007BH         LINE#         18
+  C:007CH         LINE#         19
+  C:007EH         LINE#         20
+  C:0082H         LINE#         21
+  C:0084H         LINE#         22
+  C:0085H         LINE#         23
+  C:0086H         LINE#         24
+  C:0088H         LINE#         25
   -------         ENDPROC       _HC595SENDBYTE
+  -------         PROC          HC595SENDBYTE_ALL_LOW
+  C:00C0H         LINE#         27
+  C:00C0H         LINE#         28
+  C:00C0H         LINE#         29
+  -------         ENDPROC       HC595SENDBYTE_ALL_LOW
+  -------         PROC          HC595SENDBYTE_FLICKER
+  C:0003H         LINE#         34
+  C:0003H         LINE#         35
+  C:0003H         LINE#         36
+  C:0008H         LINE#         37
+  C:000FH         LINE#         38
+  C:0014H         LINE#         39
+  C:001BH         LINE#         40
+  C:0020H         LINE#         41
+  C:0027H         LINE#         42
+  C:002CH         LINE#         43
+  C:0033H         LINE#         44
+  C:0038H         LINE#         45
+  C:003FH         LINE#         46
+  C:0044H         LINE#         47
+  C:004BH         LINE#         48
+  C:0050H         LINE#         49
+BL51 BANKED LINKER/LOCATER V6.22                                                      08/13/2023  12:16:34  PAGE 4
+
+
+  C:0057H         LINE#         50
+  C:005CH         LINE#         51
+  -------         ENDPROC       HC595SENDBYTE_FLICKER
   -------         ENDMOD        74HC595D
 
-Program Size: data=9.0 xdata=0 code=60
+  -------         MODULE        DELAY_MS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:00AFH         PUBLIC        Delay1ms
+  C:0089H         PUBLIC        _Delay_ms
+  -------         PROC          DELAY1MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:00AFH         LINE#         5
+  C:00AFH         LINE#         6
+  C:00AFH         LINE#         9
+  C:00B1H         LINE#         10
+  C:00B3H         LINE#         12
+  C:00B3H         LINE#         13
+  C:00B5H         LINE#         14
+  C:00B7H         LINE#         15
+  -------         ENDPROC       DELAY1MS
+  -------         PROC          _DELAY_MS
+  D:0004H         SYMBOL        n
+  -------         DO            
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:0089H         LINE#         17
+  C:008DH         LINE#         18
+  C:008DH         LINE#         21
+  C:0098H         LINE#         22
+  C:0098H         LINE#         23
+  C:009BH         LINE#         24
+  C:00A2H         LINE#         26
+  -------         ENDPROC       _DELAY_MS
+  -------         ENDMOD        DELAY_MS
+
+Program Size: data=9.0 xdata=0 code=197
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

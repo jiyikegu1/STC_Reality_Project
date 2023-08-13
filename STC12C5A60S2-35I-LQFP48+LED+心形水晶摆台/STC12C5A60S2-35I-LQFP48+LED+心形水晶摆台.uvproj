@@ -391,6 +391,16 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Public</GroupName>
+          <Files>
+            <File>
+              <FileName>delay_ms.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Public\delay_ms.c</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
