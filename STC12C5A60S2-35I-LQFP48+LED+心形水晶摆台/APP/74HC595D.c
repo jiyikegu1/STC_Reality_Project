@@ -23,8 +23,8 @@ void Hc595SendByte(u8 dat)
 		_nop_();
 		SCK=0;
 	}
-		SCK=1;
+		RCK=1;
 		_nop_();
 		_nop_();
-		SCK=0;
+		RCK=0;
 }
