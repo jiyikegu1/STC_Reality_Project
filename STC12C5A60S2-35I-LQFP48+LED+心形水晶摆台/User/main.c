@@ -1,6 +1,6 @@
 
 #include <74HC595D.h>
-
+#include <beep.h>
 	
 void main(void)
 {
@@ -8,5 +8,6 @@ void main(void)
 	while(1)
 	{
 		Hc595SendByte_flicker();
+		Beep();
 	}
 }

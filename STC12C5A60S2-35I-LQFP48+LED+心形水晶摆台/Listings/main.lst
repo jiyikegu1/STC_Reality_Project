@@ -1,4 +1,4 @@
-C51 COMPILER V9.56.0.0   MAIN                                                              08/13/2023 12:16:34 PAGE 1   
+C51 COMPILER V9.56.0.0   MAIN                                                              09/03/2023 17:40:11 PAGE 1   
 
 
 C51 COMPILER V9.56.0.0, COMPILATION OF MODULE MAIN
@@ -10,27 +10,17 @@ line level    source
 
    1          
    2          #include <74HC595D.h>
-   3          
+*** ERROR C129 IN LINE 61 OF .\APP\74HC595D.h: missing ';' before '|='
+   3          #include <beep.h>
    4            
    5          void main(void)
    6          {
-   7   1        Hc595SendByte_all_LOW();
-   8   1        while(1)
-   9   1        {
-  10   2          Hc595SendByte_flicker();
-  11   2        }
-  12   1      }
+   7            Hc595SendByte_all_LOW();
+   8            while(1)
+   9            {
+  10              Hc595SendByte_flicker();
+  11              Beep();
+  12            }
+  13          }
 
-
-MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =      8    ----
-   CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
-   PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----    ----
-   IDATA SIZE       =   ----    ----
-   BIT SIZE         =   ----    ----
-END OF MODULE INFORMATION.
-
-
-C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
