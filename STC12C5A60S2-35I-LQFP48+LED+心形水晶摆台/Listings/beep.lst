@@ -1,4 +1,4 @@
-C51 COMPILER V9.56.0.0   BEEP                                                              09/03/2023 17:40:12 PAGE 1   
+C51 COMPILER V9.56.0.0   BEEP                                                              09/05/2023 10:36:39 PAGE 1   
 
 
 C51 COMPILER V9.56.0.0, COMPILATION OF MODULE BEEP
@@ -11,26 +11,29 @@ line level    source
    1          
    2          #include <beep.h>
    3          #include <delay_ms.h>
-   4          
-   5          void Beep()   
-   6          {
-   7   1        Delay_ms(30);
-   8   1        beep = 0;
-   9   1        Delay_ms(30);
-  10   1        beep = 1;
-  11   1        Delay_ms(30);
-  12   1        beep = 0;
-  13   1        Delay_ms(30);
-  14   1        beep = 1;
-  15   1      }
+   4          #include "SoundPlay.h"
+   5          #include "music.h"
+   6          
+   7          
+   8          void Beep()   
+   9          {
+  10   1        
+  11   1        Play(Music_Girl,0,3,360);
+  12   1          
+  13   1          Delay_ms(500);
+  14   1          Play(Music_Same,0,3,360);
+  15   1          Delay_ms(500);
+  16   1          Play(Music_Two,0,3,360);
+  17   1          Delay_ms(500);
+  18   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     37    ----
-   CONSTANT SIZE    =   ----    ----
+   CODE SIZE        =    825    ----
+   CONSTANT SIZE    =    936    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----    ----
+   DATA SIZE        =      6      51
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.

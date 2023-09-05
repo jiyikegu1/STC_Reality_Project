@@ -1,7 +1,7 @@
 #ifndef _DELAY_MS_H_
 #define _DELAY_MS_H_
 
-#include <reg51.h>
+#include <STC12C5A60S2.h>
 
 //对数据类型进行声明定义
 typedef unsigned int u16;

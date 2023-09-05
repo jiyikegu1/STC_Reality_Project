@@ -1,7 +1,7 @@
 #ifndef _74HC595D_H_
 #define _74HC595D_H_
 
-#include "reg51.h"
+#include "STC12C5A60S2.h"
 #include <delay_ms.h>
 
 //对数据类型进行声明定义
@@ -55,13 +55,6 @@ sbit SER9 = P2^6;//串行数据输入端
 void Hc595SendByte9(u8 dat);
 
 //第二组U10
-
-sfr P4SW  = 0xBB;
-
-P4SW |=(1<<4);
-P4SW |= (1<<5);
-P4SW |= (1<<6);		//P4.6允许设置成IO
-	
 sbit SCK10 = P5^0;//移位寄存器时钟，上升沿移位
 sbit RCK10 = P4^5;//锁存寄存器时钟，高电平存储
 sbit SER10 = P4^4;//串行数据输入端

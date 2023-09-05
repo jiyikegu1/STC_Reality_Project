@@ -175,7 +175,10 @@ void Hc595SendByte9(u8 dat)
 
 void Hc595SendByte10(u8 dat)
 {
-	u8 a;
+	u8 a;//放在P4SW |= (1<<6)下，编译不通过
+	P4SW |= (1<<4);//放在头文件中编译不通过
+  P4SW |= (1<<5);
+  //P4SW |= (1<<6);		//P4.6允许设置成IO
 	SCK10=0;
 	RCK10=0;
 	for(a=0;a<8;a++)
@@ -195,7 +198,7 @@ void Hc595SendByte10(u8 dat)
 }
 
 
-void Hc595SendByte_all_LOW()//
+void Hc595SendByte_all_LOW()//全亮
 {
 	Hc595SendByte2(0x00);//低电平 01 led1；02 led2；03 led1，led2；04 led3；05 led1，led3；06 led2，led3；
 	                   //07 led1，led2，led3；08 led4；09 led1,led4；0A led2,led4；0B led1,led2,led4；
@@ -221,9 +224,7 @@ void Hc595SendByte_flicker()//led闪烁
 	    Hc595SendByte7(0xFF);//FF全灭
 	    Hc595SendByte8(0xFF);//FF全灭
 	    Hc595SendByte9(0xFF);//FF全灭
-	    Hc595SendByte10(0xFF);//FF全灭	
-	
-	
+	    Hc595SendByte10(0xFF);//FF全灭		
 	
 	    Hc595SendByte2(0xFE);//led1
 		  Delay_ms(300);

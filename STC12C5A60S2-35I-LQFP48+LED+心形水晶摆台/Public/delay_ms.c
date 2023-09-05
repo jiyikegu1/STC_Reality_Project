@@ -1,5 +1,5 @@
 
-#include <reg51.h>
+#include <STC12C5A60S2.h>
 #include <delay_ms.h>
 
 void Delay1ms()		//@12.000MHz
