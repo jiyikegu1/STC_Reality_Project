@@ -44,7 +44,7 @@
 
 #define SYSTEM_OSC 		12000000	//定义晶振频率12000000HZ
 #define SOUND_SPACE 	4/5 		//定义普通音符演奏的长度分率,//每4分音符间隔
-sbit    BeepIO    =   	P1^5;		//定义输出管脚
+sbit    BeepIO    =   	P3^7;		//定义输出管脚
 unsigned char value=0;
 unsigned int  code FreTab[12]  = { 262,277,294,311,330,349,369,392,415,440,466,494 }; //原始频率表
 unsigned char code SignTab[7]  = { 0,2,4,5,7,9,11 }; 								  //1~7在频率表中的位置

@@ -227,164 +227,164 @@ void Hc595SendByte_flicker()//led闪烁
 	    Hc595SendByte10(0xFF);//FF全灭		
 	
 	    Hc595SendByte2(0xFE);//led1
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte2(0xFD);//led2
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte2(0xFB);//led3
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte2(0xF7);//led4
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte2(0xEF);//led5
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte2(0xDF);//led6
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte2(0xBF);//led7
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte2(0x7F);//led8
-		  Delay_ms(300);
+		  Delay_ms(30);
 	    Hc595SendByte2(0xFF);//FF全灭
 	
 	    Hc595SendByte3(0xFE);//led9
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte3(0xFD);//led10
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte3(0xFB);//led11
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte3(0xF7);//led12
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte3(0xEF);//led13
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte3(0xDF);//led14
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte3(0xBF);//led15
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte3(0x7F);//led16
-		  Delay_ms(300);
+		  Delay_ms(30);
 			Hc595SendByte3(0xFF);//FF全灭
 			
 			Hc595SendByte4(0xFE);//led9
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte4(0xFD);//led10
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte4(0xFB);//led11
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte4(0xF7);//led12
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte4(0xEF);//led13
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte4(0xDF);//led14
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte4(0xBF);//led15
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte4(0x7F);//led16
-		  Delay_ms(300);
+		  Delay_ms(30);
 			Hc595SendByte4(0xFF);//FF全灭
 			
 			Hc595SendByte5(0xFE);//led9
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte5(0xFD);//led10
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte5(0xFB);//led11
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte5(0xF7);//led12
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte5(0xEF);//led13
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte5(0xDF);//led14
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte5(0xBF);//led15
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte5(0x7F);//led16
-		  Delay_ms(300);
+		  Delay_ms(30);
 			Hc595SendByte5(0xFF);//FF全灭
 			
 			Hc595SendByte6(0xFE);//led9
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte6(0xFD);//led10
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte6(0xFB);//led11
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte6(0xF7);//led12
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte6(0xEF);//led13
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte6(0xDF);//led14
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte6(0xBF);//led15
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte6(0x7F);//led16
-		  Delay_ms(300);
+		  Delay_ms(30);
 			Hc595SendByte6(0xFF);//FF全灭
 			
 			Hc595SendByte7(0xFE);//led9
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte7(0xFD);//led10
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte7(0xFB);//led11
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte7(0xF7);//led12
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte7(0xEF);//led13
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte7(0xDF);//led14
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte7(0xBF);//led15
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte7(0x7F);//led16
-		  Delay_ms(300);
+		  Delay_ms(30);
 			Hc595SendByte7(0xFF);//FF全灭
 			
 			Hc595SendByte8(0xFE);//led9
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte8(0xFD);//led10
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte8(0xFB);//led11
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte8(0xF7);//led12
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte8(0xEF);//led13
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte8(0xDF);//led14
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte8(0xBF);//led15
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte8(0x7F);//led16
-		  Delay_ms(300);
+		  Delay_ms(30);
 			Hc595SendByte8(0xFF);//FF全灭
 			
 			Hc595SendByte9(0xFE);//led9
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte9(0xFD);//led10
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte9(0xFB);//led11
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte9(0xF7);//led12
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte9(0xEF);//led13
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte9(0xDF);//led14
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte9(0xBF);//led15
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte9(0x7F);//led16
-		  Delay_ms(300);
+		  Delay_ms(30);
 			Hc595SendByte9(0xFF);//FF全灭
 			
 			Hc595SendByte10(0xFE);//led9
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte10(0xFD);//led10
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte10(0xFB);//led11
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte10(0xF7);//led12
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte10(0xEF);//led13
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte10(0xDF);//led14
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte10(0xBF);//led15
-		  Delay_ms(300);
+		  Delay_ms(30);
 		  Hc595SendByte10(0x7F);//led16
-		  Delay_ms(300);
+		  Delay_ms(30);
 			Hc595SendByte10(0xFF);//FF全灭
 }

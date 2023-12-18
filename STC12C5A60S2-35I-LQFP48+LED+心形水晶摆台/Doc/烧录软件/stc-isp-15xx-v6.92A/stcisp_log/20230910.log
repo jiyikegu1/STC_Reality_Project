@@ -1,0 +1,67 @@
+[2023-09-10 08:30:04] : Begin
+--------------------
+*MCUTYPE* : STC12C5A60S2
+*MCUID* : D17E844C537D0B
+*FILENAME* : E:\Personal_project\长期实际项目\STC项目集\STC_Reality_Project\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台\Objects\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台.hex
+*FILETIME* : 2023年09月10日, 08:29:50
+*FILESIZE* : 11051 (0x002B2B)
+*CODESIZE* : 3794 (0x000ED2)
+*CHECKSUM* : 0x00056053
+*ISPMODE* : 2
+*ISPRESULT* : 0
+--------------------
+[2023-09-10 08:30:12] : End
+--------------------------------------------------
+[2023-09-10 08:37:37] : Begin
+--------------------
+*MCUTYPE* : STC12C5A60S2
+*MCUID* : D17E844C537D0B
+*FILENAME* : E:\Personal_project\长期实际项目\STC项目集\STC_Reality_Project\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台\Objects\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台.hex
+*FILETIME* : 2023年09月10日, 08:37:31
+*FILESIZE* : 11051 (0x002B2B)
+*CODESIZE* : 3794 (0x000ED2)
+*CHECKSUM* : 0x00056053
+*ISPMODE* : 2
+*ISPRESULT* : 0
+--------------------
+[2023-09-10 08:37:44] : End
+--------------------------------------------------
+[2023-09-10 08:47:05] : Begin
+--------------------
+*MCUTYPE* : STC89C52
+*FILENAME* : H:\1、嵌入式资料存档库\2、开发板资料库\CH6800-ES V2.0光盘资料(新)(原始)\实验程序\中级实验例程\音乐播放器\template.hex
+*FILETIME* : 2023年09月10日, 08:47:01
+*FILESIZE* : 6991 (0x001B4F)
+*CODESIZE* : 2427 (0x00097B)
+*CHECKSUM* : 0x0003575B
+*ISPMODE* : 2
+*ISPRESULT* : 4
+--------------------
+[2023-09-10 08:47:11] : End
+--------------------------------------------------
+[2023-09-10 08:47:30] : Begin
+--------------------
+*MCUTYPE* : STC89C52
+*FILENAME* : H:\1、嵌入式资料存档库\2、开发板资料库\CH6800-ES V2.0光盘资料(新)(原始)\实验程序\中级实验例程\音乐播放器\template.hex
+*FILETIME* : 2023年09月10日, 08:47:01
+*FILESIZE* : 6991 (0x001B4F)
+*CODESIZE* : 2427 (0x00097B)
+*CHECKSUM* : 0x0003575B
+*ISPMODE* : 2
+*ISPRESULT* : 3
+--------------------
+[2023-09-10 08:48:31] : End
+--------------------------------------------------
+[2023-09-10 08:49:08] : Begin
+--------------------
+*MCUTYPE* : STC89C52RC/LE52RC
+*FILENAME* : H:\1、嵌入式资料存档库\2、开发板资料库\CH6800-ES V2.0光盘资料(新)(原始)\实验程序\中级实验例程\音乐播放器\template.hex
+*FILETIME* : 2023年09月10日, 08:47:01
+*FILESIZE* : 6991 (0x001B4F)
+*CODESIZE* : 2427 (0x00097B)
+*CHECKSUM* : 0x0003575B
+*ISPMODE* : 2
+*ISPRESULT* : 3
+--------------------
+[2023-09-10 08:49:33] : End
+--------------------------------------------------

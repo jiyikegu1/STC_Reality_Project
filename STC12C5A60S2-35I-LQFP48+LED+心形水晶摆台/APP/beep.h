@@ -7,7 +7,7 @@
 //typedef unsigned int u16;
 //typedef unsigned char u8;
 	
-sbit beep = P3^7;
+//sbit beep = P3^7;
 
 void InitialSound(void);
 void Beep();
