@@ -1,4 +1,4 @@
-C51 COMPILER V9.56.0.0   74HC595D                                                          09/10/2023 08:37:31 PAGE 1   
+C51 COMPILER V9.56.0.0   74HC595D                                                          12/24/2023 08:36:29 PAGE 1   
 
 
 C51 COMPILER V9.56.0.0, COMPILATION OF MODULE 74HC595D
@@ -62,7 +62,7 @@ line level    source
   52   1        u8 a;
   53   1        SCK4=0;
   54   1        RCK4=0;
-C51 COMPILER V9.56.0.0   74HC595D                                                          09/10/2023 08:37:31 PAGE 2   
+C51 COMPILER V9.56.0.0   74HC595D                                                          12/24/2023 08:36:29 PAGE 2   
 
   55   1        for(a=0;a<8;a++)
   56   1        {
@@ -126,7 +126,7 @@ line level    source
  114          {
  115   1        u8 a;
  116   1        SCK7=0;
-C51 COMPILER V9.56.0.0   74HC595D                                                          09/10/2023 08:37:31 PAGE 3   
+C51 COMPILER V9.56.0.0   74HC595D                                                          12/24/2023 08:36:29 PAGE 3   
 
  117   1        RCK7=0;
  118   1        for(a=0;a<8;a++)
@@ -190,7 +190,7 @@ line level    source
  176          void Hc595SendByte10(u8 dat)
  177          {
  178   1        u8 a;//放在P4SW |= (1<<6)下，编译不通过
-C51 COMPILER V9.56.0.0   74HC595D                                                          09/10/2023 08:37:31 PAGE 4   
+C51 COMPILER V9.56.0.0   74HC595D                                                          12/24/2023 08:36:29 PAGE 4   
 
  179   1        P4SW |= (1<<4);//放在头文件中编译不通过
  180   1        P4SW |= (1<<5);
@@ -254,7 +254,7 @@ line level    source
  238   1            Delay_ms(30);
  239   1            Hc595SendByte2(0xDF);//led6
  240   1            Delay_ms(30);
-C51 COMPILER V9.56.0.0   74HC595D                                                          09/10/2023 08:37:31 PAGE 5   
+C51 COMPILER V9.56.0.0   74HC595D                                                          12/24/2023 08:36:29 PAGE 5   
 
  241   1            Hc595SendByte2(0xBF);//led7
  242   1            Delay_ms(30);
@@ -318,7 +318,7 @@ line level    source
  300   1            
  301   1            Hc595SendByte6(0xFE);//led9
  302   1            Delay_ms(30);
-C51 COMPILER V9.56.0.0   74HC595D                                                          09/10/2023 08:37:31 PAGE 6   
+C51 COMPILER V9.56.0.0   74HC595D                                                          12/24/2023 08:36:29 PAGE 6   
 
  303   1            Hc595SendByte6(0xFD);//led10
  304   1            Delay_ms(30);
@@ -382,7 +382,7 @@ line level    source
  362   1            Delay_ms(30);
  363   1            Hc595SendByte9(0xEF);//led13
  364   1            Delay_ms(30);
-C51 COMPILER V9.56.0.0   74HC595D                                                          09/10/2023 08:37:31 PAGE 7   
+C51 COMPILER V9.56.0.0   74HC595D                                                          12/24/2023 08:36:29 PAGE 7   
 
  365   1            Hc595SendByte9(0xDF);//led14
  366   1            Delay_ms(30);

@@ -389,11 +389,6 @@
               <FileType>1</FileType>
               <FilePath>.\APP\74HC595D.c</FilePath>
             </File>
-            <File>
-              <FileName>beep.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\APP\beep.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>

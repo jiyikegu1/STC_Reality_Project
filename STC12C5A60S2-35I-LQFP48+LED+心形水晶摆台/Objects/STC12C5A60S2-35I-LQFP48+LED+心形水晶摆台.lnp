@@ -1,7 +1,6 @@
 ".\Objects\STARTUP.obj",
 ".\Objects\main.obj",
 ".\Objects\74HC595D.obj",
-".\Objects\beep.obj",
 ".\Objects\delay_ms.obj" 
 TO ".\Objects\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台" 
 PRINT(".\Listings\STC12C5A60S2-35I-LQFP48+LED+心形水晶摆台.m51") RAMSIZE(256) 
