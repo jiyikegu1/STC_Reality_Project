@@ -1,0 +1,93 @@
+C51 COMPILER V9.60.7.0   KEY                                                               01/21/2024 10:11:52 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE KEY
+OBJECT MODULE PLACED IN .\Objects\key.obj
+COMPILER INVOKED BY: D:\keil\C51\BIN\C51.EXE APP\key.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Public;.\APP) DEBUG OBJECTEXTEN
+                    -D PRINT(.\Listings\key.lst) TABS(2) OBJECT(.\Objects\key.obj)
+
+line level    source
+
+   1          
+   2          #include "key.h"
+   3          
+   4          sbit key1=P3^4;
+   5          sbit key2=P3^2;
+   6          sbit key3=P3^6;
+   7          sbit key4=P3^5;
+   8          
+   9          void key1_run()
+  10          {
+  11   1      if(key1==0)
+  12   1          {
+  13   2           delayms(30);
+  14   2           if(key1==0)
+  15   2            {
+  16   3            LED0=1;
+  17   3           }    
+  18   2          }
+  19   1          else
+  20   1          {
+  21   2             LED0=0;}
+  22   1      }
+  23          
+  24          void key2_run()
+  25          {
+  26   1      if(key2==0)
+  27   1          {
+  28   2           delayms(30);
+  29   2           if(key2==0)
+  30   2            {
+  31   3            LED0=1;
+  32   3           }    
+  33   2          }
+  34   1          else
+  35   1          {
+  36   2             LED0=0;}
+  37   1      }
+  38          
+  39          void key3_run()
+  40          {
+  41   1      if(key3==0)
+  42   1          {
+  43   2           delayms(30);
+  44   2           if(key3==0)
+  45   2            {
+  46   3            LED0=1;
+  47   3           }    
+  48   2          }
+  49   1          else
+  50   1          {
+  51   2             LED0=0;}
+  52   1      }
+  53          
+  54          void key4_run()
+C51 COMPILER V9.60.7.0   KEY                                                               01/21/2024 10:11:52 PAGE 2   
+
+  55          {
+  56   1      if(key4==0)
+  57   1          {
+  58   2           delayms(30);
+  59   2           if(key4==0)
+  60   2            {
+  61   3            LED0=1;
+  62   3           }    
+  63   2          }
+  64   1          else
+  65   1          {
+  66   2             LED0=0;}
+  67   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     76    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

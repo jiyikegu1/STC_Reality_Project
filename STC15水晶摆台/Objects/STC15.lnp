@@ -1,0 +1,10 @@
+".\Objects\STARTUP.obj",
+".\Objects\STC15_main.obj",
+".\Objects\delay_ms.obj",
+".\Objects\led.obj",
+".\Objects\74HC595D.obj",
+".\Objects\uart.obj",
+".\Objects\BY9301_24QS.obj",
+".\Objects\key.obj" 
+TO ".\Objects\STC15" 
+PRINT(".\Listings\STC15.m51") RAMSIZE(256) 

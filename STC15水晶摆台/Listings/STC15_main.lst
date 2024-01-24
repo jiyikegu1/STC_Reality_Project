@@ -1,0 +1,71 @@
+C51 COMPILER V9.60.7.0   STC15_MAIN                                                        01/21/2024 10:11:51 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE STC15_MAIN
+OBJECT MODULE PLACED IN .\Objects\STC15_main.obj
+COMPILER INVOKED BY: D:\keil\C51\BIN\C51.EXE User\STC15_main.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Public;.\APP) DEBUG OBJ
+                    -ECTEXTEND PRINT(.\Listings\STC15_main.lst) TABS(2) OBJECT(.\Objects\STC15_main.obj)
+
+line level    source
+
+   1          
+   2          #include "stc15f2k60s2.h"
+   3          #include "STC15_main.h"
+   4          #include "74HC595D.h"
+   5          #include "BY9301_24QS.h"
+   6          #include "key.h"
+   7          /**
+   8          1、主频11.0592；
+   9          2、串口波特率9600；
+  10          
+  11          **/
+  12          
+  13          /**
+  14                 ******实现功能******
+  15          1、复位RST,P5.4烧录程序时设置成复位管脚（当用作复位管脚时，由于STC8H内部已有4k上拉电阻，
+  16             所以外部拉低可实现复位）；
+  17          2、P3.0RXD、P3.1TXD串口通信（程序烧写，已完成）;
+  18             P5.0RXD3_2、P5.1TXD3_2串口通信（调试串口，待做）;
+  19             P1.0RXD2、P1.1TXD2串口通信（语音通信，音乐播放器功能）；
+  20          3、心形指示流水灯（已完成）；
+  21          4、EX_LVD掉电检查，掉电检测；
+  22          5、轻触开关按键（轻触按键，当前程序不起作用）；
+  23          6、红外接收功能；
+  24          7、音乐播放器功能，之前采用蜂鸣器，但要实现音乐功能难度较大，
+  25             改为音乐播放器芯片，现采用flash最大支持32M，可以试改为优盘；
+  26          **/
+  27          
+  28          main()
+  29          {
+  30   1        IO_init();           //真对 IAP15W4K61S4  IO口初始化
+  31   1        Hc595SendByte_all_LOW();//全亮
+  32   1        uart2_init();
+  33   1        BY9301_24QS_Track_playback1();
+  34   1        BY9301_24QS_play();
+  35   1        while(1)
+  36   1        {
+  37   2        //Hc595SendByte_flicker();//led闪烁
+  38   2        key1_run();
+  39   2        key2_run();
+  40   2        key3_run();
+  41   2        key4_run();
+  42   2        LED0=1;
+  43   2      
+  44   2        }
+  45   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     53    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.7.0   STC15_MAIN                                                        01/21/2024 10:11:51 PAGE 2   
+
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

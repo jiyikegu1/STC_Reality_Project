@@ -1,0 +1,421 @@
+C51 COMPILER V9.60.7.0   74HC595D                                                          01/21/2024 10:11:51 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE 74HC595D
+OBJECT MODULE PLACED IN .\Objects\74HC595D.obj
+COMPILER INVOKED BY: D:\keil\C51\BIN\C51.EXE APP\74HC595D.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Public;.\APP) DEBUG OBJECT
+                    -EXTEND PRINT(.\Listings\74HC595D.lst) TABS(2) OBJECT(.\Objects\74HC595D.obj)
+
+line level    source
+
+   1          
+   2          #include "intrins.h"
+   3          #include "74HC595D.h"
+   4          #include "delay_ms.h"
+   5          
+   6          void Hc595SendByte2(u8 dat)
+   7          {
+   8   1        u8 a;
+   9   1        SCK2=0;
+  10   1        RCK2=0;
+  11   1        for(a=0;a<8;a++)
+  12   1        {
+  13   2          SER2=dat>>7;
+  14   2          dat<<=1;
+  15   2          
+  16   2          SCK2=1;
+  17   2          _nop_();
+  18   2          _nop_();
+  19   2          SCK2=0;
+  20   2        }
+  21   1          RCK2=1;
+  22   1          _nop_();
+  23   1          _nop_();
+  24   1          RCK2=0;
+  25   1      }
+  26          
+  27          void Hc595SendByte3(u8 dat)
+  28          {
+  29   1        u8 a;
+  30   1        SCK3=0;
+  31   1        RCK3=0;
+  32   1        for(a=0;a<8;a++)
+  33   1        {
+  34   2          SER3=dat>>7;
+  35   2          dat<<=1;
+  36   2          
+  37   2          SCK3=1;
+  38   2          _nop_();
+  39   2          _nop_();
+  40   2          SCK3=0;
+  41   2        }
+  42   1          RCK3=1;
+  43   1          _nop_();
+  44   1          _nop_();
+  45   1          RCK3=0;
+  46   1      }
+  47          
+  48          void Hc595SendByte4(u8 dat)
+  49          {
+  50   1        u8 a;
+  51   1        SCK4=0;
+  52   1        RCK4=0;
+  53   1        for(a=0;a<8;a++)
+  54   1        {
+C51 COMPILER V9.60.7.0   74HC595D                                                          01/21/2024 10:11:51 PAGE 2   
+
+  55   2          SER4=dat>>7;
+  56   2          dat<<=1;
+  57   2          
+  58   2          SCK4=1;
+  59   2          _nop_();
+  60   2          _nop_();
+  61   2          SCK4=0;
+  62   2        }
+  63   1          RCK4=1;
+  64   1          _nop_();
+  65   1          _nop_();
+  66   1          RCK4=0;
+  67   1      }
+  68          
+  69          void Hc595SendByte5(u8 dat)
+  70          {
+  71   1        u8 a;
+  72   1        SCK5=0;
+  73   1        RCK5=0;
+  74   1        for(a=0;a<8;a++)
+  75   1        {
+  76   2          SER5=dat>>7;
+  77   2          dat<<=1;
+  78   2          
+  79   2          SCK5=1;
+  80   2          _nop_();
+  81   2          _nop_();
+  82   2          SCK5=0;
+  83   2        }
+  84   1          RCK5=1;
+  85   1          _nop_();
+  86   1          _nop_();
+  87   1          RCK5=0;
+  88   1      }
+  89          
+  90          void Hc595SendByte6(u8 dat)
+  91          {
+  92   1        u8 a;
+  93   1        SCK6=0;
+  94   1        RCK6=0;
+  95   1        for(a=0;a<8;a++)
+  96   1        {
+  97   2          SER6=dat>>7;
+  98   2          dat<<=1;
+  99   2          
+ 100   2          SCK6=1;
+ 101   2          _nop_();
+ 102   2          _nop_();
+ 103   2          SCK6=0;
+ 104   2        }
+ 105   1          RCK6=1;
+ 106   1          _nop_();
+ 107   1          _nop_();
+ 108   1          RCK6=0;
+ 109   1      }
+ 110          
+ 111          void Hc595SendByte7(u8 dat)
+ 112          {
+ 113   1        u8 a;
+ 114   1        SCK7=0;
+ 115   1        RCK7=0;
+ 116   1        for(a=0;a<8;a++)
+C51 COMPILER V9.60.7.0   74HC595D                                                          01/21/2024 10:11:51 PAGE 3   
+
+ 117   1        {
+ 118   2          SER7=dat>>7;
+ 119   2          dat<<=1;
+ 120   2          
+ 121   2          SCK7=1;
+ 122   2          _nop_();
+ 123   2          _nop_();
+ 124   2          SCK7=0;
+ 125   2        }
+ 126   1          RCK7=1;
+ 127   1          _nop_();
+ 128   1          _nop_();
+ 129   1          RCK7=0;
+ 130   1      }
+ 131          
+ 132          void Hc595SendByte8(u8 dat)
+ 133          {
+ 134   1        u8 a;
+ 135   1        SCK8=0;
+ 136   1        RCK8=0;
+ 137   1        for(a=0;a<8;a++)
+ 138   1        {
+ 139   2          SER8=dat>>7;
+ 140   2          dat<<=1;
+ 141   2          
+ 142   2          SCK8=1;
+ 143   2          _nop_();
+ 144   2          _nop_();
+ 145   2          SCK8=0;
+ 146   2        }
+ 147   1          RCK8=1;
+ 148   1          _nop_();
+ 149   1          _nop_();
+ 150   1          RCK8=0;
+ 151   1      }
+ 152          
+ 153          void Hc595SendByte9(u8 dat)
+ 154          {
+ 155   1        u8 a;
+ 156   1        SCK9=0;
+ 157   1        RCK9=0;
+ 158   1        for(a=0;a<8;a++)
+ 159   1        {
+ 160   2          SER9=dat>>7;
+ 161   2          dat<<=1;
+ 162   2          
+ 163   2          SCK9=1;
+ 164   2          _nop_();
+ 165   2          _nop_();
+ 166   2          SCK9=0;
+ 167   2        }
+ 168   1          RCK9=1;
+ 169   1          _nop_();
+ 170   1          _nop_();
+ 171   1          RCK9=0;
+ 172   1      }
+ 173          
+ 174          void Hc595SendByte10(u8 dat)
+ 175          {
+ 176   1        u8 a;
+ 177   1        SCK10=0;
+ 178   1        RCK10=0;
+C51 COMPILER V9.60.7.0   74HC595D                                                          01/21/2024 10:11:51 PAGE 4   
+
+ 179   1        for(a=0;a<8;a++)
+ 180   1        {
+ 181   2          SER10=dat>>7;
+ 182   2          dat<<=1;
+ 183   2          
+ 184   2          SCK10=1;
+ 185   2          _nop_();
+ 186   2          _nop_();
+ 187   2          SCK10=0;
+ 188   2        }
+ 189   1          RCK10=1;
+ 190   1          _nop_();
+ 191   1          _nop_();
+ 192   1          RCK10=0;
+ 193   1      }
+ 194          
+ 195          
+ 196          void Hc595SendByte_all_LOW()//全亮
+ 197          {
+ 198   1        Hc595SendByte2(0x00);//低电平 01 led1；02 led2；03 led1，led2；04 led3；05 led1，led3；06 led2，led3；
+ 199   1                           //07 led1，led2，led3；08 led4；09 led1,led4；0A led2,led4；0B led1,led2,led4；
+ 200   1                           //0C led3,led4；0D led1,led3,led4；0E led2,led3,led4；0F led1,led2,led3,led4；
+ 201   1                           //FF全灭,00全亮
+ 202   1        Hc595SendByte3(0x00);
+ 203   1        Hc595SendByte4(0x00);
+ 204   1        Hc595SendByte5(0x00);
+ 205   1        Hc595SendByte6(0x00);
+ 206   1        Hc595SendByte7(0x00);
+ 207   1        Hc595SendByte8(0x00);
+ 208   1        Hc595SendByte9(0x00);
+ 209   1        Hc595SendByte10(0x00);
+ 210   1      }
+ 211          /*
+ 212          void Hc595SendByte_flicker()//led闪烁
+ 213          {
+ 214                Hc595SendByte2(0xFF);//FF全灭
+ 215                Hc595SendByte3(0xFF);//FF全灭
+ 216                Hc595SendByte4(0xFF);//FF全灭
+ 217                Hc595SendByte5(0xFF);//FF全灭
+ 218                Hc595SendByte6(0xFF);//FF全灭
+ 219                Hc595SendByte7(0xFF);//FF全灭
+ 220                Hc595SendByte8(0xFF);//FF全灭
+ 221                Hc595SendByte9(0xFF);//FF全灭
+ 222                Hc595SendByte10(0xFF);//FF全灭    
+ 223            
+ 224                Hc595SendByte2(0xFE);//led1
+ 225                delayms(100);
+ 226                Hc595SendByte2(0xFD);//led2
+ 227                delayms(100);
+ 228                Hc595SendByte2(0xFB);//led3
+ 229                delayms(100);
+ 230                Hc595SendByte2(0xF7);//led4
+ 231                delayms(100);
+ 232                Hc595SendByte2(0xEF);//led5
+ 233                delayms(100);
+ 234                Hc595SendByte2(0xDF);//led6
+ 235                delayms(100);
+ 236                Hc595SendByte2(0xBF);//led7
+ 237                delayms(100);
+ 238                Hc595SendByte2(0x7F);//led8
+ 239                delayms(100);
+ 240                Hc595SendByte2(0xFF);//FF全灭
+C51 COMPILER V9.60.7.0   74HC595D                                                          01/21/2024 10:11:51 PAGE 5   
+
+ 241            
+ 242                Hc595SendByte3(0xFE);//led9
+ 243                delayms(100);
+ 244                Hc595SendByte3(0xFD);//led10
+ 245                delayms(100);
+ 246                Hc595SendByte3(0xFB);//led11
+ 247                delayms(100);
+ 248                Hc595SendByte3(0xF7);//led12
+ 249                delayms(100);
+ 250                Hc595SendByte3(0xEF);//led13
+ 251                delayms(100);
+ 252                Hc595SendByte3(0xDF);//led14
+ 253                delayms(100);
+ 254                Hc595SendByte3(0xBF);//led15
+ 255                delayms(100);
+ 256                Hc595SendByte3(0x7F);//led16
+ 257                delayms(100);
+ 258                Hc595SendByte3(0xFF);//FF全灭
+ 259                
+ 260                Hc595SendByte4(0xFE);//led9
+ 261                delayms(100);
+ 262                Hc595SendByte4(0xFD);//led10
+ 263                delayms(100);
+ 264                Hc595SendByte4(0xFB);//led11
+ 265                delayms(100);
+ 266                Hc595SendByte4(0xF7);//led12
+ 267                delayms(100);
+ 268                Hc595SendByte4(0xEF);//led13
+ 269                delayms(100);
+ 270                Hc595SendByte4(0xDF);//led14
+ 271                delayms(100);
+ 272                Hc595SendByte4(0xBF);//led15
+ 273                delayms(100);
+ 274                Hc595SendByte4(0x7F);//led16
+ 275                delayms(100);
+ 276                Hc595SendByte4(0xFF);//FF全灭
+ 277                
+ 278                Hc595SendByte5(0xFE);//led9
+ 279                delayms(100);
+ 280                Hc595SendByte5(0xFD);//led10
+ 281                delayms(100);
+ 282                Hc595SendByte5(0xFB);//led11
+ 283                delayms(100);
+ 284                Hc595SendByte5(0xF7);//led12
+ 285                delayms(100);
+ 286                Hc595SendByte5(0xEF);//led13
+ 287                delayms(100);
+ 288                Hc595SendByte5(0xDF);//led14
+ 289                delayms(100);
+ 290                Hc595SendByte5(0xBF);//led15
+ 291                delayms(100);
+ 292                Hc595SendByte5(0x7F);//led16
+ 293                delayms(100);
+ 294                Hc595SendByte5(0xFF);//FF全灭
+ 295                
+ 296                Hc595SendByte6(0xFE);//led9
+ 297                delayms(100);
+ 298                Hc595SendByte6(0xFD);//led10
+ 299                delayms(100);
+ 300                Hc595SendByte6(0xFB);//led11
+ 301                delayms(100);
+ 302                Hc595SendByte6(0xF7);//led12
+C51 COMPILER V9.60.7.0   74HC595D                                                          01/21/2024 10:11:51 PAGE 6   
+
+ 303                delayms(100);
+ 304                Hc595SendByte6(0xEF);//led13
+ 305                delayms(100);
+ 306                Hc595SendByte6(0xDF);//led14
+ 307                delayms(100);
+ 308                Hc595SendByte6(0xBF);//led15
+ 309                delayms(100);
+ 310                Hc595SendByte6(0x7F);//led16
+ 311                delayms(100);
+ 312                Hc595SendByte6(0xFF);//FF全灭
+ 313                
+ 314                Hc595SendByte7(0xFE);//led9
+ 315                delayms(100);
+ 316                Hc595SendByte7(0xFD);//led10
+ 317                delayms(100);
+ 318                Hc595SendByte7(0xFB);//led11
+ 319                delayms(100);
+ 320                Hc595SendByte7(0xF7);//led12
+ 321                delayms(100);
+ 322                Hc595SendByte7(0xEF);//led13
+ 323                delayms(100);
+ 324                Hc595SendByte7(0xDF);//led14
+ 325                delayms(100);
+ 326                Hc595SendByte7(0xBF);//led15
+ 327                delayms(100);
+ 328                Hc595SendByte7(0x7F);//led16
+ 329                delayms(100);
+ 330                Hc595SendByte7(0xFF);//FF全灭
+ 331                
+ 332                Hc595SendByte8(0xFE);//led9
+ 333                delayms(100);
+ 334                Hc595SendByte8(0xFD);//led10
+ 335                delayms(100);
+ 336                Hc595SendByte8(0xFB);//led11
+ 337                delayms(100);
+ 338                Hc595SendByte8(0xF7);//led12
+ 339                delayms(100);
+ 340                Hc595SendByte8(0xEF);//led13
+ 341                delayms(100);
+ 342                Hc595SendByte8(0xDF);//led14
+ 343                delayms(100);
+ 344                Hc595SendByte8(0xBF);//led15
+ 345                delayms(100);
+ 346                Hc595SendByte8(0x7F);//led16
+ 347                delayms(100);
+ 348                Hc595SendByte8(0xFF);//FF全灭
+ 349                
+ 350                Hc595SendByte9(0xFE);//led9
+ 351                delayms(100);
+ 352                Hc595SendByte9(0xFD);//led10
+ 353                delayms(100);
+ 354                Hc595SendByte9(0xFB);//led11
+ 355                delayms(100);
+ 356                Hc595SendByte9(0xF7);//led12
+ 357                delayms(100);
+ 358                Hc595SendByte9(0xEF);//led13
+ 359                delayms(100);
+ 360                Hc595SendByte9(0xDF);//led14
+ 361                delayms(100);
+ 362                Hc595SendByte9(0xBF);//led15
+ 363                delayms(100);
+ 364                Hc595SendByte9(0x7F);//led16
+C51 COMPILER V9.60.7.0   74HC595D                                                          01/21/2024 10:11:51 PAGE 7   
+
+ 365                delayms(100);
+ 366                Hc595SendByte9(0xFF);//FF全灭
+ 367                
+ 368                Hc595SendByte10(0xFE);//led9
+ 369                delayms(100);
+ 370                Hc595SendByte10(0xFD);//led10
+ 371                delayms(100);
+ 372                Hc595SendByte10(0xFB);//led11
+ 373                delayms(100);
+ 374                Hc595SendByte10(0xF7);//led12
+ 375                delayms(100);
+ 376                Hc595SendByte10(0xEF);//led13
+ 377                delayms(100);
+ 378                Hc595SendByte10(0xDF);//led14
+ 379                delayms(100);
+ 380                Hc595SendByte10(0xBF);//led15
+ 381                delayms(100);
+ 382                Hc595SendByte10(0x7F);//led16
+ 383                delayms(100);
+ 384                Hc595SendByte10(0xFF);//FF全灭
+ 385          }*/
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    387    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

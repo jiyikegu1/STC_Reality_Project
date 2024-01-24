@@ -1,0 +1,78 @@
+C51 COMPILER V9.60.7.0   UART                                                              01/21/2024 10:11:51 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE UART
+OBJECT MODULE PLACED IN .\Objects\uart.obj
+COMPILER INVOKED BY: D:\keil\C51\BIN\C51.EXE APP\uart.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Public;.\APP) DEBUG OBJECTEXTE
+                    -ND PRINT(.\Listings\uart.lst) TABS(2) OBJECT(.\Objects\uart.obj)
+
+line level    source
+
+   1          
+   2          #include "uart.h"
+   3          
+   4          /*
+   5          1、主频11.0592；
+   6          2、串口2波特率9600；
+   7          */
+   8                                                          
+   9          /* 
+  10          串口2用于语音芯片BY9301-24QS通信，模式0和模式1为异步通信，一位起始位和一位停止位，8位，奇偶位：无
+  11          程序目前功能：串口2向BY9301-24QS语音芯片发送0x0a（通讯数据格式是：起始位：1位； 
+  12          数据位： 8位；奇偶位：无； 停止位：1位。）
+  13          */
+  14          
+  15          #define FOSC 11059200L        //MUC主频为11.0592下
+  16          #define BAUD 9600         //串口2产生的波特率为9600
+  17          #define TM  (65536-(FOSC/4/BAUD)) //计算初值
+  18          
+  19          #define S2RI  0X01          //接收标志位
+  20          #define S2TI  0X02          //发送标志位
+  21          
+  22          /*
+  23          1、修改0X0A为m，例如发送0x0a，ISP_Check(0x0a);
+  24          */
+  25          
+  26          void ISP_Check(unsigned int m)          //串口2发送数据调用函数
+  27          {
+  28   1        S2BUF=m;            //发送0x0a
+  29   1        while(S2CON&S2TI==0); //等特数据传送  (S2TI发送中断标志)
+  30   1        S2CON&=~S2TI;         //清标志位   
+  31   1      }
+  32          
+  33          
+  34          void uart2_init()
+  35          {
+  36   1        //串口2配置
+  37   1        S2CON = 0x50;       //REN=1允许串行接受状态，串口工作模式2             
+  38   1        T2L=TM;            //配置串口2波特率   初始值
+  39   1        T2H=TM>>8;                    
+  40   1        AUXR=0X14;      //开启定时器T2  并且开启1T模式
+  41   1        IE2=0X01;       //串口2中断使能                                                           
+  42   1        EA   = 1;      // 开总中断
+  43   1      }
+  44          
+  45          void Uart2()  interrupt 8 using 1   //串口2中断
+  46          {
+  47   1        if(S2CON&S2RI)            //如果收到数据 S2RI置位
+  48   1        {
+  49   2         S2BUF=0X0A;              //此处需要修改
+  50   2         S2CON&=~S2RI;            //清标志位  
+  51   2        }
+  52   1      }
+
+
+C51 COMPILER V9.60.7.0   UART                                                              01/21/2024 10:11:51 PAGE 2   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     40    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
